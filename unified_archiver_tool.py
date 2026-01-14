@@ -10,7 +10,7 @@ from selenium.webdriver.edge.options import Options
 # --- 1. Modular Configuration ---
 print("=== 🚀 Universal Stream Archiver Suite (Fixed Version) ===")
 
-BASE_URL = "https://www.ooschool.cc"
+BASE_URL = "https://your-target-site.com"
 API_PATH = f"{BASE_URL}/api/v2/programs"
 
 TARGET_ID = input("🔑 Please enter Target ID (Program ID): ").strip()
@@ -175,3 +175,4 @@ if course_units:
                     process_batch_download([matches[int(sel)-1]])
         elif choice == '3' or choice.lower() == 'exit':
             break
+
