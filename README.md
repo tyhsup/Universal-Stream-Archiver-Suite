@@ -28,10 +28,9 @@ To adapt this tool for your specific target website, update the following in uni
 1. Update Base URLs & Domain
    At the top of the script, modify the BASE_URL and API path variables. This is the most critical step for adapting to other sites:
 
-## Change these values to your target platform
-   BASE_URL = "https://your-target-site.com"
-   
-   API_PATH = f"{BASE_URL}/api/v2/path/to/content"
+### Change these values to your target platform
+   1).BASE_URL = "https://your-target-site.com" 
+   2.)API_PATH = f"{BASE_URL}/api/v2/path/to/content"
    
 2. Adjust JSON Structure
    The function get_course_structure() parses the website's API. Since different sites use different JSON keys, you must update the mapping:
