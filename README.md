@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GPU: NVIDIA](https://img.shields.io/badge/GPU-NVIDIA%20NVENC-green)](https://developer.nvidia.com/video-codec-sdk)
 
-A professional high-performance toolkit for archiving M3U8 video streams. It features an integrated menu for batch processing or targeted patching, optimized for NVIDIA GPU acceleration.
+A high-performance toolkit for archiving M3U8 video streams. It features an integrated menu for batch processing or targeted patching, optimized for NVIDIA GPU acceleration.
 
 ## ✨ Key Features
 - **Two-Phase Workflow**: Sequential URL capture followed by parallel GPU downloading for a clean UI.
