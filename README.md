@@ -18,19 +18,48 @@ Please refer to the [Customization Guide](#-customization-guide) before running 
 1. **Install Dependencies**:
    pip install selenium-wire requests tqdm
    
-3. Setup FFmpeg: Ensure FFmpeg with CUDA support is in your system PATH.
+2. Setup FFmpeg: Ensure FFmpeg with CUDA support is in your system PATH.
 
-4. Run:
+3. Run:
   python unified_archiver_tool.py
 
 🔍 Customization Guide
   To adapt this tool for your specific target website, update the following in unified_archiver_tool.py:
+1. Update Base URLs & Domain
+   At the top of the script, modify the BASE_URL and API path variables. This is the most critical step for adapting to other sites:
 
-  BASE_URL: The root domain of the platform.
+   # Change these values to your target platform
 
-  API_PATH: The endpoint structure for fetching course contents.
+   BASE_URL = "https://your-target-site.com"
 
-  JSON Keys: Update programContentId, contentSectionTitle, and title to match the target API's response keys.
+   API_PATH = f"{BASE_URL}/api/v2/path/to/content"
+   
+2. Adjust JSON Structure
+   The function get_course_structure() parses the website's API. Since different sites use different JSON keys, you must update the mapping:
+
+   Item ID: Change item.get('programContentId') to match the ID key of your platform.
+
+   Folder Name: Change d.get('contentSectionTitle') to the key representing categories/sections.
+
+   File Name: Change d.get('title') to the key representing the lesson title.
+3. URL Interception Logic
+   In capture_urls_via_listening(), the script filters network traffic for .m3u8 and .vtt. If your platform uses different file extensions or unique query parameters (like token= instead of Signature=), update the filter conditions there.
+
+🔍 How to Obtain Session Credentials
+The tool mimics an authenticated session using credentials from your browser's Developer Tools (F12):
+
+Target ID: The unique identifier found in the URL of the content (e.g., .../programs/**target-id-123**).
+
+Authorization Bearer Token: Found in the Network tab under Request Headers (copy the string after Bearer ).
+
+⚙️ Phase Execution Logic
+To prevent a messy console output, the tool executes in two distinct phases:
+
+Phase 1 (Capture): Browsers open one-by-one to intercept links.
+
+Tip: If a capture hangs, press F5 in the pop-up browser to refresh the stream.
+
+Phase 2 (Download): Once all links are gathered, the background GPU engine starts. A single consolidated tqdm progress bar tracks the overall status.
 
 ⚖️ Disclaimer
 This software is provided for personal educational backup only. Users are responsible for complying with the Terms of Service of their respective platforms.
