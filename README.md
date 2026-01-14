@@ -20,11 +20,11 @@ Please refer to the [Customization Guide](#-customization-guide) before running 
    
 2. Download Edge WebDriver (Crucial):
 
-Check your Edge browser version: Settings > About Microsoft Edge.
+   Check your Edge browser version: Settings > About Microsoft Edge.
 
-Download the matching driver from Microsoft Edge Driver Official Site.
+   Download the matching driver from Microsoft Edge Driver Official Site.
 
-Place the msedgedriver.exe file in the same folder as unified_archiver_tool.py.
+   Place the msedgedriver.exe file in the same folder as unified_archiver_tool.py.
 
 3. Setup FFmpeg: Ensure FFmpeg with CUDA support is installed and added to your system PATH.
 
