@@ -1,0 +1,21 @@
+# Python virtual environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local profiles & Browser cache
+automation_profile/
+/downloads/
+/課程影片與教學資料/
+
+# Executables & Drivers
+chromedriver.exe
+msedgedriver.exe
+chromedriver-win64/
+
+# Temporary and local configuration files
+ooschool_cookies.json.txt
+gemma_reasoner.py
+login_helper.py
+temp_*.vtt

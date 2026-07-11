@@ -4,3 +4,6 @@ selenium_stealth==1.0.6
 selenium_wire==5.1.0
 tqdm==4.67.1
 webdriver_manager==4.0.1
+blinker==1.7.0
+pyOpenSSL==23.2.0
+cryptography==41.0.7
